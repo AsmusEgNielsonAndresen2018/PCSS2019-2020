@@ -43,9 +43,15 @@ public class gameClient extends Application implements TicTacToeConstants {
 
 	// Host name or ip
 	private String host = "localhost";
-
+	
+	
+	
+	
+	
 	@Override // Override the start method in the Application class
 	public void start(Stage primaryStage) {
+		// color for the background
+		String style = "-fx-background-color: rgba(0, 255, 0, 0.5);";
 		// Pane to hold cell
 		GridPane pane = new GridPane();
 		for (int i = 0; i < 3; i++)
@@ -56,6 +62,8 @@ public class gameClient extends Application implements TicTacToeConstants {
 		borderPane.setTop(lblTitle);
 		borderPane.setCenter(pane);
 		borderPane.setBottom(lblStatus);
+		// set the background of the borderPane
+		borderPane.setStyle(style);
 
 		// Create a scene and place it in the stage
 		Scene scene = new Scene(borderPane, 320, 350);
@@ -223,6 +231,11 @@ public class gameClient extends Application implements TicTacToeConstants {
 		// Repaint facilitates X and O tokens on pane in regards to which players turn it is and draws the respective token
 		protected void repaint() {
 			if (token == 'X') {
+				// random color and stroke width per X
+				int red = (int) (Math.random()*255)+1;
+				int green = (int) (Math.random()*255)+1;
+				int blue = (int) (Math.random()*255)+1;
+				int strokeWidth = (int)(Math.random()*8)+1;
 				
 				Line line1 = new Line(10, 10, this.getWidth() - 10, this.getHeight() - 10);
 				line1.endXProperty().bind(this.widthProperty().subtract(10));
@@ -230,10 +243,22 @@ public class gameClient extends Application implements TicTacToeConstants {
 				Line line2 = new Line(10, this.getHeight() - 10, this.getWidth() - 10, 10);
 				line2.startYProperty().bind(this.heightProperty().subtract(10));
 				line2.endXProperty().bind(this.widthProperty().subtract(10));
-
+				
+				//setting the color and stroke of the X
+				line1.setStroke(Color.rgb(red, green, blue));
+				line1.setStrokeWidth(strokeWidth);
+				line2.setStroke(Color.rgb(red, green, blue));
+				line2.setStrokeWidth(strokeWidth);
+				
 				this.getChildren().addAll(line1, line2); // Add the lines to the pane
 				
 			} else if (token == 'O') {
+				
+				// random color and stroke width per O
+				int red = (int) (Math.random()*255)+1;
+				int green = (int) (Math.random()*255)+1;
+				int blue = (int) (Math.random()*255)+1;
+				int strokeWidth = (int)(Math.random()*8)+1;
 				
 				Ellipse ellipse = new Ellipse(this.getWidth() / 2, this.getHeight() / 2, this.getWidth() / 2 - 10,
 						this.getHeight() / 2 - 10);
@@ -241,8 +266,12 @@ public class gameClient extends Application implements TicTacToeConstants {
 				ellipse.centerYProperty().bind(this.heightProperty().divide(2));
 				ellipse.radiusXProperty().bind(this.widthProperty().divide(2).subtract(10));
 				ellipse.radiusYProperty().bind(this.heightProperty().divide(2).subtract(10));
-				ellipse.setStroke(Color.BLACK);
-				ellipse.setFill(Color.WHITE);
+				//setting the color of the stroke of the eclipse
+				ellipse.setStroke(Color.rgb(red, green, blue));
+				//changing the stroke of the eclipse
+				ellipse.setStrokeWidth(strokeWidth);
+				// setting the filling of the eclipse to be transparent
+				ellipse.setFill(Color.TRANSPARENT);
 
 				getChildren().add(ellipse); // Add the ellipse to the pane
 			}
