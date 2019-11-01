@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="0" key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel"/>
+	<item value="D:\github_connection\PCSS2019-2020\.git" key="GitSelectRepositoryPage.lastRepository"/>
 	<list key="RepositorySelectionPage.UsedUris">
 		<item value="file:///D:\github_connection\PCSS2019-2020"/>
 	</list>

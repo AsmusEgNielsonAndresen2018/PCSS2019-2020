@@ -1,4 +1,4 @@
-package test;
+//package test;
 
 public interface TicTacToeConstants {
 	public static int PLAYER1 = 1; // Indicate player 1
