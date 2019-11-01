@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 public class gameServer extends Application implements TicTacToeConstants {
 	private int sessionNo = 1; // Number for first session
-	private int port = 8014;
+	private int port = 8022;
 
 	@Override // Override the start method from the Application class
 	public void start(Stage primaryStage) {

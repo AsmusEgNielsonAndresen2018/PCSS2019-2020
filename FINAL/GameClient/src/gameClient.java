@@ -79,7 +79,7 @@ public class gameClient extends Application implements TicTacToeConstants {
 		try {
 			// Create a socket to connect to the server
 			@SuppressWarnings("resource") // Suppresses resource leak warning
-			Socket socket = new Socket(host, 8000);
+			Socket socket = new Socket(host, 8022);
 
 			// Create an input stream to receive data from the server
 			fromServer = new DataInputStream(socket.getInputStream());
@@ -230,13 +230,12 @@ public class gameClient extends Application implements TicTacToeConstants {
 
 		// Repaint facilitates X and O tokens on pane in regards to which players turn it is and draws the respective token
 		protected void repaint() {
+			// randomize red, blue and stroke width that will be used for the tokens
+			int red = (int) (Math.random()*255)+1;
+			int green = 0;
+			int blue = (int) (Math.random()*255)+1;
+			int strokeWidth = (int)(Math.random()*8)+1;
 			if (token == 'X') {
-				// random color and stroke width per X
-				int red = (int) (Math.random()*255)+1;
-				int green = (int) (Math.random()*255)+1;
-				int blue = (int) (Math.random()*255)+1;
-				int strokeWidth = (int)(Math.random()*8)+1;
-				
 				Line line1 = new Line(10, 10, this.getWidth() - 10, this.getHeight() - 10);
 				line1.endXProperty().bind(this.widthProperty().subtract(10));
 				line1.endYProperty().bind(this.heightProperty().subtract(10));
@@ -252,14 +251,7 @@ public class gameClient extends Application implements TicTacToeConstants {
 				
 				this.getChildren().addAll(line1, line2); // Add the lines to the pane
 				
-			} else if (token == 'O') {
-				
-				// random color and stroke width per O
-				int red = (int) (Math.random()*255)+1;
-				int green = (int) (Math.random()*255)+1;
-				int blue = (int) (Math.random()*255)+1;
-				int strokeWidth = (int)(Math.random()*8)+1;
-				
+			} else if (token == 'O') {		
 				Ellipse ellipse = new Ellipse(this.getWidth() / 2, this.getHeight() / 2, this.getWidth() / 2 - 10,
 						this.getHeight() / 2 - 10);
 				ellipse.centerXProperty().bind(this.widthProperty().divide(2));
