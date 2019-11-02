@@ -3,9 +3,9 @@
   Students                     : Asmus Andresen, Daniel Theisen, Emil Linddahl, Marc Petersen, Scott Naylor
   Group	                       : 308
   Course                       : Programming of Complex Software Systems
-  Link to client repository    :
-  Link to server repository    :
-  Link to scrum repository     :
+  Link to client repository    : https://github.com/emillinddahl/tictactoe-client
+  Link to server repository    : https://github.com/emillinddahl/tictactoe-server
+  Link to scrum repository     : https://github.com/AsmusEgNielsonAndresen2018/PCSS2019-2020
 ______________________________________________________________________________________________________________________________________________________
 
 The folder contains:
@@ -48,6 +48,4 @@ To run both server and clients at the same time, two session of Eclipse with two
 is needed. First run the server and once a windows pops up, the server is running. afterward start two clients,
 where the first one will be X and the second one will be O. To run multiple session of TicTacToe, keep the 
 server running and run more clients. 
-
-Scrum:
-so we had two 
+ 
