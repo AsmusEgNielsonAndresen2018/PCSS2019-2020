@@ -1,9 +1,11 @@
-  Project name   : TicTacToe online game
+  Project name                 : TicTacToe online game
 
-  Students       : Asmus Andresen, Daniel Theisen, Emil Linddahl, Marc Petersen, Scott Naylor
-  Group	         : 308
-  Course         : Programming of Complex Software Systems
-  Link to Github :
+  Students                     : Asmus Andresen, Daniel Theisen, Emil Linddahl, Marc Petersen, Scott Naylor
+  Group	                       : 308
+  Course                       : Programming of Complex Software Systems
+  Link to client repository    :
+  Link to server repository    :
+  Link to scrum repository     :
 ______________________________________________________________________________________________________________________________________________________
 
 The folder contains:
